@@ -14,15 +14,17 @@ source /opt/xilinx/xcdr/setup.sh
 #FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} -filter_complex 'multiscale_xma=outputs=1: out_1_width=3840: out_1_height=2160: out_1_rate=full [a]' -map '[a]' -cores 4 -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_4k_u30.mp4"
 
 FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} \
--filter_complex 'multiscale_xma= outputs=4: \
+-filter_complex 'multiscale_xma= outputs=5: \
 out_1_width=1280: out_1_height=720:  out_1_rate=full: \
-out_2_width=1920: out_2_height=1080: out_2_rate=half: \
-out_3_width=2560: out_3_height=1440: out_3_rate=half: \
-out_4_width=3840: out_4_height=2160: out_4_rate=half [a][b][c][d]' \
+out_2_width=1280: out_2_height=720:  out_2_rate=half: \
+out_3_width=1920: out_3_height=1080: out_3_rate=half: \
+out_4_width=2560: out_4_height=1440: out_4_rate=half: \
+out_5_width=3840: out_5_height=2160: out_5_rate=half [a][b][c][d][e]' \
 -map '[a]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p30.mp4 \
--map '[b]' -cores 4 -b:v 4M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15.mp4 \
--map '[c]' -cores 4 -b:v 6M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15.mp4 \
--map '[d]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k30.mp4"
+-map '[b]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p15.mp4 \
+-map '[c]' -cores 4 -b:v 4M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15.mp4 \
+-map '[d]' -cores 4 -b:v 6M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15.mp4 \
+-map '[e]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k30.mp4"
 
 cmd="time ffmpeg -hide_banner ${FFMPEG_ARGS}"
 
