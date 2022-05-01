@@ -19,8 +19,8 @@ out_1_width=1280: out_1_height=720:  out_1_rate=full: \
 out_2_width=1920: out_2_height=1080: out_2_rate=half: \
 out_3_width=2560: out_3_height=1440: out_3_rate=half [a][b][c]' \
 -map '[a]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p30.mp4 \
--map '[b]' -cores 4 -b:v 4M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p30.mp4 \
--map '[c]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p30.mp4"
+-map '[b]' -cores 4 -b:v 4M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15.mp4 \
+-map '[c]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15.mp4"
 
 cmd="time ffmpeg -hide_banner ${FFMPEG_ARGS}"
 
