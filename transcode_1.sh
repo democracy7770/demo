@@ -9,9 +9,9 @@ OUTPUT_FILE_PREFIX_NAME=$3
 #-c:v libx264 -c:a copy -r 60 -b:v 1M -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_4k.mp4"
 
 FFMPEG_ARGS="-i ${INPUT_FILE} \
--s 1280x720 -c:v libx264 -c:a aac -b:v 2.5M -r 15 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_720p30fps.mp4 \
--s 1920x1080 -c:v libx264 -c:a aac -b:v 4M -r 30 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_1080p30fps.mp4 \
--s 2560x1440 -c:v libx264 -c:a aac -b:v 8M -r 30 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_1440p30fps.mp4"
+-s 1280x720 -c:v libx264 -c:a aac -b:v 2.5M -r 30 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_720p30fps.mp4 \
+-s 1920x1080 -c:v libx264 -c:a aac -b:v 4M -r 15 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_1080p30fps.mp4 \
+-s 2560x1440 -c:v libx264 -c:a aac -b:v 8M -r 15 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_1440p30fps.mp4"
 
 cmd="time ffmpeg_nou30 -hide_banner ${FFMPEG_ARGS}"
 
