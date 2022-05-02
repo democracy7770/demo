@@ -28,7 +28,7 @@ done
 cmd_pretty=${cmd_arr[@]}
 
 echo
-echo -e "= COMMAND \n> ${cmd}"
+echo -e "= COMMAND \n> ${cmd_pretty}"
 read ENTER
 eval $cmd
 
