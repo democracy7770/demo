@@ -10,7 +10,7 @@ echo "= activating drm."
 
 source /opt/xilinx/xcdr/setup.sh
 
-FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} -cores 4 \
+FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} \
 -filter_complex 'multiscale_xma= outputs=5: \
 out_1_width=1280: out_1_height=720:  out_1_rate=full: \
 out_2_width=1280: out_2_height=720:  out_2_rate=half: \
