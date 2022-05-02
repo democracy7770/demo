@@ -23,6 +23,7 @@ out_5_width=3840: out_5_height=2160: out_5_rate=half [vid1][vid2][vid3][vid4][vi
 -map '[vid3]' -b:v 4M -c:v mpsoc_vcu_h264 -map '[aud3]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15fps.mp4 \
 -map '[vid4]' -b:v 6M -c:v mpsoc_vcu_h264 -map '[aud4]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15fps.mp4 \
 -map '[vid5]' -b:v 8M -c:v mpsoc_vcu_h264 -map '[aud5]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k15fps.mp4"
+cmd="time ffmpeg -hide_banner ${FFMPEG_ARGS}"
 
 cmd_arr=(${cmd})
 for i in ${!cmd_arr[@]}

@@ -28,7 +28,7 @@ if [[ ${SETTING_FLAG} == '1' ]]; then
   docker run --privileged -itd --rm --name demo \
     -v ${PWD}/demo_transcode_multiscale.sh:/app/demo_transcode_multiscale.sh \
     -v ${PWD}/transcode_1.sh:/app/transcode.sh \
-    -v ${PWD}/transcode_u30_1.sh:/app/transcode_u30.sh \
+    -v ${PWD}/transcode_u30_n.sh:/app/transcode_u30.sh \
     -v ${PWD}/input:/app/input \
     -v ${PWD}/output:/app/output \
     -v ${PWD}/cred.json:/app/cred.json \
