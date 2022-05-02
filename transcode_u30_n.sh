@@ -18,11 +18,11 @@ out_3_width=1920: out_3_height=1080: out_3_rate=half: \
 out_4_width=2560: out_4_height=1440: out_4_rate=half: \
 out_5_width=3840: out_5_height=2160: out_5_rate=half [vid1][vid2][vid3][vid4][vid5]; \
 [0:1]asplit=outputs=5[aud1][aud2][aud3][aud4][aud5]' \
--map '[vid1]' -b:v 2.5M -c:v mpsoc_vcu_h264 -map '[aud1]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p30fps.mp4 \
--map '[vid2]' -b:v 2.5M -c:v mpsoc_vcu_h264 -map '[aud2]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p15fps.mp4 \
--map '[vid3]' -b:v 4M -c:v mpsoc_vcu_h264 -map '[aud3]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15fps.mp4 \
--map '[vid4]' -b:v 6M -c:v mpsoc_vcu_h264 -map '[aud4]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15fps.mp4 \
--map '[vid5]' -b:v 8M -c:v mpsoc_vcu_h264 -map '[aud5]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k15fps.mp4"
+-map '[vid1]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -map '[aud1]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p30fps.mp4 \
+-map '[vid2]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -map '[aud2]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p15fps.mp4 \
+-map '[vid3]' -cores 4 -b:v 4M -c:v mpsoc_vcu_h264 -map '[aud3]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1080p15fps.mp4 \
+-map '[vid4]' -cores 4 -b:v 6M -c:v mpsoc_vcu_h264 -map '[aud4]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_1440p15fps.mp4 \
+-map '[vid5]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 -map '[aud5]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k15fps.mp4"
 cmd="time ffmpeg -hide_banner ${FFMPEG_ARGS}"
 
 cmd_arr=(${cmd})
