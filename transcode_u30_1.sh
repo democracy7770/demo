@@ -10,10 +10,10 @@ echo "= activating drm."
 
 source /opt/xilinx/xcdr/setup.sh
 
-FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} -cores 4 \
+FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} \
 -filter_complex 'multiscale_xma= outputs=1: \
 out_1_width=3840: out_1_height=2160: out_1_rate=full[vid]; [0:1]asplit= outputs=1[aud]' \
--map '[vid]' -b:v 8M -c:v mpsoc_vcu_h264 \
+-map '[vid]' -cores 4 -b:v 8M -c:v mpsoc_vcu_h264 \
 -map '[aud]' -c:a aac \
 -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_4k30fps.mp4"
 cmd="time ffmpeg -hide_banner ${FFMPEG_ARGS}"
