@@ -28,11 +28,11 @@ FFMPEG_ARGS="-c:v mpsoc_vcu_h264 -i ${INPUT_FILE} \
 -filter_complex 'multiscale_xma= outputs=8: \
 out_1_width=1280: out_1_height=720:  out_1_rate=full: \
 out_2_width=1280: out_2_height=720:  out_2_rate=half: \
-out_3_width=1920: out_3_height=1080: out_3_rate=full: \
+out_3_width=1920: out_3_height=1080: out_3_rate=half: \
 out_4_width=1920: out_4_height=1080: out_4_rate=half: \
-out_5_width=2560: out_5_height=1440: out_5_rate=full: \
+out_5_width=2560: out_5_height=1440: out_5_rate=half: \
 out_6_width=2560: out_6_height=1440: out_6_rate=half: \
-out_7_width=3840: out_7_height=2160: out_7_rate=full: \
+out_7_width=3840: out_7_height=2160: out_7_rate=half: \
 out_8_width=3840: out_8_height=2160: out_8_rate=half [vid1][vid2][vid3][vid4][vid5][vid6][vid7][vid8]; \
 [0:1]asplit=outputs=8[aud1][aud2][aud3][aud4][aud5][aud6][aud7][aud8]' \
 -map '[vid1]' -cores 4 -b:v 2.5M -c:v mpsoc_vcu_h264 -map '[aud1]' -c:a aac -y ${OUTPUT_DIR}/${OUTPUT_FILE_PREFIX_NAME}_u30_720p30fps.mp4 \
