@@ -33,7 +33,7 @@ do
   [[ ${cmd_arr[${i}]} =~ out_[0-9]+_width ]] || \
   [[ ${cmd_arr[${i}]} =~ [0:1] ]] || \
   [ ${cmd_arr[${i}]} == "-map" ]; then
-    cmd_arr[${i}]="\n\t\t${cmd_arr[${i}]}"
+    cmd_arr[${i}]="\n\t${cmd_arr[${i}]}"
   fi
 done
 cmd_pretty=${cmd_arr[@]}
