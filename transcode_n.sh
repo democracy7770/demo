@@ -17,7 +17,7 @@ cmd_arr=(${cmd})
 for i in ${!cmd_arr[@]}
 do
   if [ ${cmd_arr[${i}]} == "-s" ] || [ ${cmd_arr[${i}]} == "-map" ] || [ ${cmd_arr[${i}]} == "-vf" ]; then
-    cmd_arr[${i}]="\n\t\t${cmd_arr[${i}]}"
+    cmd_arr[${i}]="\n\t${cmd_arr[${i}]}"
   fi
 done
 cmd_pretty=${cmd_arr[@]}
