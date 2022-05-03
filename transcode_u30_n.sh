@@ -31,7 +31,7 @@ for i in ${!cmd_arr[@]}
 do
   if [ ${cmd_arr[${i}]} == "-filter_complex" ] || \
   [[ ${cmd_arr[${i}]} =~ out_[0-9]+_width ]] || \
-  [[ ${cmd_arr[${i}]} =~ [0:1] ]] || \
+  [[ ${cmd_arr[${i}]} =~ \[0:1\] ]] || \
   [ ${cmd_arr[${i}]} == "-map" ]; then
     cmd_arr[${i}]="\n\t${cmd_arr[${i}]}"
   fi
